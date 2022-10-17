@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+  color: white;
+  background-color: darkslategrey;
+}
+
+ul {
+  background-color: aquamarine;
+}
+
+#first {
+  background-color: gold;
+}
+
+#second {
+  background-color: silver;
+}
+
+#third {
+  background-color: #CD7F32;
+}
