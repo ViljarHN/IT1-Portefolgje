@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50px 5fr;
+    grid-template-rows: 50px 5fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main {
+    grid-area: main;
+    height: 100vh;
+}
+
+.head {
+    grid-area: header;
+    width: 100%;
+    height: auto;
+}
+.head ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: red;
+}
+.head li a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.head li a:hover {
+    background-color: #111;
+}
+
+#sidebar {
+    position: absolute;
+    left: -200px;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(139, 139, 169);
+    transition-duration: 0.5s;
+    display: grid;
+    grid-area: sidebar;
+    grid-template-columns: 200px 50px;
+    grid-template-rows: 55px 100%;
+    grid-template-areas:
+        "HeadSidebar ShowMenu"
+        "ListSidebar ShowMenu ";
+}
+
+#sidebar header {
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size: xx-large;
+    grid-area: HeadSidebar;
+}
+
+#sidebar li {
+    padding: 10px;
+    grid-area: ListSidebar;
+}
+
+#sidebar:hover {
+    transition-duration: 0.5s;
+    left: 0px
+}
+
+#sidebar li a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+#sidebar li a:hover {
+    background-color: azure;
+}
+
+#show_menu {
+    grid-area: ShowMenu;
+    background-color: grey;
+}

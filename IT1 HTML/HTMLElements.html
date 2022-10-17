@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IT1 HTML</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="elements.css">
+    </head>
+    <body>
+        <div class="overskrift">
+            <h1>HTML framvisning</h1>
+        </div>
+        <div class="eksempel_av_kode">
+            <div class="eksempel_boks" id="text_box">
+                <b>Tekst og Nummer:</b><br>
+                <label for="TEXT">Skirv inn tekst</label><br>
+                <input type="text" name="TEXT"><br>
+                <label for="nummer">Skriv inn eit tal</label><br>
+                <input type="number" name="nummer">
+            </div>
+            <div class="eksempel_boks" id="radio_box">
+                <b>Radio:</b><br>
+                <input type="radio" name="mat" id="burger">
+                <label for="burger">Burger</label><br>
+                <input type="radio" name="mat" id="pizza">
+                <label for="pizza">Pizza</label><br>
+                <input type="radio" name="mat" id="taco">
+                <label for="taco">Taco</label>
+            </div>
+            <div class="eksempel_boks" id="button_box">
+                <b>Knapp:</b><br>
+                <button onclick="click();">Klikk her!</button>
+            </div>
+            <div class="eksempel_boks" id="select_box">
+                <b>Select:</b><br>
+                <select name="bil" id="bil">
+                    <option value="vw">Volkswagen</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="porche">Porche</option>
+                </select>
+            </div>
+        </div>
+        <script src="elements.js" async defer></script>
+    </body>
+</html>
