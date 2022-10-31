@@ -1,0 +1,105 @@
+img {
+    margin-top: 100px;
+}
+
+div.pixel {
+    width: 120px;
+    height: 120px;
+    border: 3px solid;
+    margin: 50px;
+}
+
+div {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+.r0 {
+    top: 0px;
+}
+.r1 {
+    top: 10px;
+}
+.r2 {
+    top: 20px;
+}
+.r3 {
+    top: 30px;
+}
+.r4 {
+    top: 40px;
+}
+.r5 {
+    top: 50px;
+}
+.r6 {
+    top: 60px;
+}
+.r7 {
+    top: 70px;
+}
+.r8 {
+    top: 80px;
+}
+.r9 {
+    top: 90px;
+}
+.r10 {
+    top: 100px;
+}
+.r11 {
+    top: 110px;
+}
+
+
+
+.c0 {
+    left: 0px;
+}
+.c1 {
+    left: 10px;
+}
+.c2 {
+    left: 20px;
+}
+.c3 {
+    left: 30px;
+}
+.c4 {
+    left: 40px;
+}
+.c5 {
+    left: 50px;
+}
+.c6 {
+    left: 60px;
+}
+.c7 {
+    left: 70px;
+}
+.c8 {
+    left: 80px;
+}
+.c9 {
+    left: 90px;
+}
+.c10 {
+    left: 100px;
+}
+.c11 {
+    left: 110px;
+}
+
+.black {
+    background-color: black;
+}
+.red {
+    background-color: red;
+}
+.white {
+    background-color: white;
+}
+.grey {
+    background-color: grey;
+}
