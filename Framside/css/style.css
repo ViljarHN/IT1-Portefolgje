@@ -93,3 +93,6 @@ ul {
     grid-area: ShowMenu;
     background-color: grey;
 }
+#show_menu img {
+    width: 50px;
+}
