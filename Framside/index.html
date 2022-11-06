@@ -10,7 +10,7 @@
     </head>
     <body>
         <div id="sidebar">
-            <header>MENU</header>
+            <header>Oppgaver</header>
             <ul id="sidebar_elements">
                 <li><a href="/HTML eksempel/HTMLElements.html" target="iframe_main">HTML eksempel</a></li>
                 <li><a href="/Oppgaver/2D tabeller og lister/Oppgave 1/tabell.html" target="iframe_main">2D oppgave 1</a></li>
@@ -30,12 +30,29 @@
                 <li><a href="https://www.w3schools.com/" target="_blank">w3schools</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a></li>
                 <li><a href="/KaboomTest 2.0/index.html" target="iframe_main">Adventure</a></li>
-                <li style="float:right"><a href="/Framside/html/ommegIndex.html" target="iframe_main">Om</a></li>
+                <li><a onclick="show_help();">Hjelp</a></li>
+                <li style="float:right"><a href="/Framside/html/ommegIndex.html" target="iframe_main">Om meg</a></li>
             </ul>
         </div>
         <div class="main">
             <iframe src="/Framside/html/StartIndex.html" style="width: 100%; height: 100%; border: none; margin: 0;" name="iframe_main"></iframe>
         </div>
-        <script src="javascript/main.js" async defer></script>
+        <div id="helpModal" class="modal">
+            <header class="helpheader">
+                <a onclick="close_help();" class="closebtn">x</a>
+                <div class="h2div">
+                    <h2>Hjelp</h2>
+                </div>
+            </header>
+            <div class="helptext">
+                <p><strong>Adventrue:</strong></p>
+                <p class="up">Hopp: &uarr;</p>
+                <p class="left">Venstre: &larr;</p>
+                <p class="right">Høgre: &#8594;</p>
+                <p><strong>Menu:</strong></p>
+                <p>IT1 oppgåver finner du i menyen til venstre</p>
+            </div>
+        </div>
+        <script src="/Framside/javascript/main.js" async defer></script>
     </body>
 </html>

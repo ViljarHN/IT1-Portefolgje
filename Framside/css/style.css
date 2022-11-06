@@ -23,26 +23,32 @@ ul {
 
 .head {
     grid-area: header;
+    font-size: 19px;
     width: 100%;
     height: auto;
-    background-color: red;
+    background-color: rgb(150, 197, 156);
 }
+
 .head ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-.head li a{
+
+.head li a {
     float: left;
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
+
 .head li a:hover {
-    background-color: #111;
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 #sidebar {
@@ -80,12 +86,17 @@ ul {
     left: 0px
 }
 
-#sidebar li a{
+#sidebar li a {
     color: black;
     text-decoration: none;
     padding: 10px;
 }
+
 #sidebar li a:hover {
+    background-color: azure;
+}
+
+#sidebar li a:target {
     background-color: azure;
 }
 
@@ -93,6 +104,46 @@ ul {
     grid-area: ShowMenu;
     background-color: grey;
 }
+
 #show_menu img {
     width: 50px;
+}
+
+
+.modal {
+    display: none;
+    position: absolute;
+    left: 30vw;
+    top: 100px;
+    width: 40vw;
+}
+
+.closebtn {
+    font-family: Arial;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.closebtn:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.helpheader{
+    background-color: #5e77a8;
+    font-size: 25px;
+    color: white;
+}
+.h2div {
+    display: flex;
+    justify-content: center;
+}
+.helptext {
+    background-color: #777;
+    padding: 2px 16px;
 }

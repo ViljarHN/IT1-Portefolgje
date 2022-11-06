@@ -1,6 +1,9 @@
-window.onload = () => {
-    const element = document.getElementById('sidebar_elements')
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-    }
+function show_help() {
+    const helpModal = document.getElementById('helpModal')
+    helpModal.style.display = 'block'
+}
+
+function close_help() {
+    const helpModal = document.getElementById('helpModal')
+    helpModal.style.display = 'none'
 }
