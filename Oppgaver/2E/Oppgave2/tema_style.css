@@ -5,15 +5,12 @@
 .container div {
     flex-direction: column;
     border: 3px solid;
-    max-width: 200px;
+    max-width: 260px;
     word-wrap: break-word;
 }
 
 img {
-    width: 200px;
+    width: 260px;
+    height: 240px;
     border-bottom: 3px solid pink;
-}
-
-.bilde1 {
-    height: 200px;
 }
