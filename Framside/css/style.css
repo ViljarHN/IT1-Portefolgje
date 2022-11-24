@@ -1,57 +1,195 @@
-body {
+html {
+    scroll-behavior: smooth;
+}
+
+* {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    /*
     display: grid;
     grid-template-columns: 50px 5fr;
     grid-template-rows: 50px 5fr;
     grid-template-areas:
         "sidebar header"
         "sidebar main";
+    */
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
+/*
 .main {
     grid-area: main;
-    height: 100vh;
+    height: 100vh; 
 }
+*/
 
-.head {
-    grid-area: header;
+.h-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     font-size: 19px;
     width: 100%;
     height: auto;
-    background-color: rgb(150, 197, 156);
+    background-color: darkgrey;
+    border-bottom: 2px solid red;
 }
-
-.head ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.head li a {
+.h-navbar li a {
     float: left;
-    display: block;
-    color: black;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
 }
-
-.head li a:hover {
+.h-navbar li a:hover {
     background-color: black;
     color: white;
     cursor: pointer;
 }
 
-#sidebar {
+.home-section {
+    position: relative;
+    text-align: center;
+}
+.home-section img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.home-section p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.about-section {
+    padding: 80px 30px;
+    padding-bottom: 0;
+}
+.about-container {
+    display: flex;
+    justify-content: center;
+}
+.about-container img {
+    width: 25%;
+}
+.about-content {
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.about-text p {
+    padding: 10px 0;
+}
+.about-text li {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+.about-code-language {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 30px;
+    font-size: 30px;
+    background-color: rgb(255, 180, 130);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oppgave-section {
+    padding: 80px 50px;
+}
+.oppgave-container {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.oppgave {
+    margin: 10px;
+    background-color: red;
+    text-align: center;
+    font-size: x-large;
+}
+.oppgave-section iframe {
+    border: 10px double;
+    width: 100%;
+    height: 100%;
+}
+
+.project-section {
+    margin-bottom: 80px;
+}
+.project-container {
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.project-content {
+    margin: 10px 50px;
+    padding: 10px;
+    border: 5px solid;
+    height: min-content;
+}
+.project-content:hover {
+    border-color:red
+}
+.project-content:hover h3 {
+    color: red;
+}
+.project-content h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.project-content h4 {
+    border: 1px solid;
+    text-align: center;
+    margin: 20px;
+}
+.project-content h4:hover {
+    color: red;
+    font-size: 20px;
+}
+
+.footer-container {
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+}
+.footer-container a {
+    margin: 10px;
+    opacity: 0.5;
+    transition: 500ms;
+}
+.footer-container a:hover {
+    opacity: 1;
+}
+.footer-container img{
+    width: 50px;
+}
+
+/*
+.v-navbar {
     position: absolute;
     left: -200px;
     width: 250px;
@@ -67,7 +205,7 @@ ul {
         "ListSidebar ShowMenu ";
 }
 
-#sidebar header {
+.v-navbar header {
     background-color: grey;
     padding: 10px;
     text-align: center;
@@ -76,27 +214,27 @@ ul {
     grid-area: HeadSidebar;
 }
 
-#sidebar li {
+.v-navbar li {
     padding: 10px;
     grid-area: ListSidebar;
 }
 
-#sidebar:hover {
+.v-navbar:hover {
     transition-duration: 0.5s;
     left: 0px
 }
 
-#sidebar li a {
+.v-navbar li a {
     color: black;
     text-decoration: none;
     padding: 10px;
 }
 
-#sidebar li a:hover {
+.v-navbar li a:hover {
     background-color: azure;
 }
 
-#sidebar li a:target {
+.v-navbar li a:target {
     background-color: azure;
 }
 
@@ -147,3 +285,4 @@ ul {
     background-color: #777;
     padding: 2px 16px;
 }
+*/
