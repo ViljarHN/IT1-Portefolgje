@@ -246,11 +246,11 @@ body {
 #show_menu img {
     width: 50px;
 }
-
+*/
 
 .modal {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 30vw;
     top: 100px;
     width: 40vw;
@@ -285,4 +285,3 @@ body {
     background-color: #777;
     padding: 2px 16px;
 }
-*/
