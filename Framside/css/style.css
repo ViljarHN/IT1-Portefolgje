@@ -13,22 +13,11 @@ html {
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: white;
-    /*
-    display: grid;
-    grid-template-columns: 50px 5fr;
-    grid-template-rows: 50px 5fr;
-    grid-template-areas:
-        "sidebar header"
-        "sidebar main";
-    */
 }
 
-/*
-.main {
-    grid-area: main;
-    height: 100vh; 
+section {
+    border: 1px solid;
 }
-*/
 
 .h-navbar {
     position: fixed;
@@ -247,7 +236,6 @@ body {
 #show_menu img {
     width: 50px;
 }
-*/
 
 .modal {
     display: none;
@@ -286,3 +274,4 @@ body {
     background-color: #777;
     padding: 2px 16px;
 }
+*/
