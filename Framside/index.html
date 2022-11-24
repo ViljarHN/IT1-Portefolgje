@@ -7,9 +7,111 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-    </head>
+    </head> 
     <body>
-        <div id="sidebar">
+        <header>
+            <nav class="h-navbar">
+                <ul>
+                    <li><a href="#home-section">Hjem</a></li>
+                    <li><a href="#about-section">Om</a></li>
+                    <li><a href="#oppgave-section">Oppgaver</a></li>
+                    <li><a href="#project-section">Prosjekter</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">W3schools</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a></li>
+                    <li><a onclick="show_help();">Hjelp</a></li>
+                    <!--<li style="float:right"><a href="/Framside/html/ommegIndex.html" target="iframe_main">Om meg</a></li>-->
+                </ul>
+            </nav>
+        </header>
+        <div class="home-section" id="home-section">
+            <img src="/Framside/image/IMG_0556.JPG" alt="homescreen">
+            <p>VHN Portfolio</p>
+        </div>
+        <div class="about-section" id="about-section">
+            <h1 class="text-center">Om</h1>
+            <div class="about-container">
+                <img src="/Framside/image/Portrait.jpg" alt="portrait">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Hei, mitt namn er <span style="color: red">Viljar</span></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste vero, enim quod ea dolorum, reiciendis magnam maxime unde debitis beatae ipsam aliquam aperiam, explicabo molestiae voluptatem hic quis dicta expedita?</p>
+                        <ul>
+                            <li>Namn: Viljar</li>
+                            <li>Alder: 18</li>
+                            <li>Utdanning: NGVGS avd. Dombås</li>
+                            <li><strong>Programmeringsspråk:</strong></li>
+                        </ul>
+                    </div>
+                    <div class="about-code-language">
+                        <div class="circle">HTML</div>
+                        <div class="circle">CSS</div>
+                        <div class="circle">JS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="oppgave-section" id="oppgave-section">
+            <h1 class="text-center">Oppgaver</h1>
+            <div class="oppgave-container">
+                <div class="oppgave">
+                    <a href="/Oppgaver/2D/Oppgave1/tabell.html" target="oppgave-iframe"><p>2D Oppgave 1</p></a>
+                </div>
+                <div class="oppgave">
+                    <a href="/Oppgaver/2D/Oppgave2/liste.html" target="oppgave-iframe"><p>2D Oppgave 2</p></a>
+                </div>
+                <div class="oppgave">
+                    <a href="/Oppgaver/2D/Oppgave3/timeplan.html" target="oppgave-iframe"><p>2D Oppgave 3</p></a>
+                </div>
+                <div class="oppgave">
+                    <a href="/Oppgaver/2E/Oppgave1/OLring_index.html" target="oppgave-iframe"><p>2E Oppgave 1</p></a>
+                </div>
+                <div class="oppgave">
+                    <a href="/Oppgaver/2E/Oppgave2/tema_index.html" target="oppgave-iframe"><p>2E Oppgave 2</p></a>
+                </div>
+                <div class="oppgave">
+                    <a href="/Oppgaver/Pixelart/index.html" target="oppgave-iframe"><p>Pixelart</p></a>
+                </div>
+            </div>
+            <iframe name="oppgave-iframe" src="/Oppgaver/2D/Oppgave1/tabell.html" onload="resizeIframe(this)"></iframe>
+        </div>
+        <div class="project-section" id="project-section">
+            <h1 class="text-center">Andre prosjekter</h1>
+            <div class="project-container">
+                <div class="project-content">
+                    <h3>IT1 Portfolio</h3>
+                    <p>Prosjektet er den nettsida du befinner deg på nå. Portefølgja har med hensikt å vise kven eg er, kva eg dirver med og det eg har jobba med inna IT</p>
+                    <a href="https://github.com/ViljarHN/IT1-Portefolgje" target="_blank"><h4>Github</h4></a>
+                </div>
+                <div class="project-content">
+                    <h3>Kaboom.js Game</h3>
+                    <p></p>
+                    <a href="https://github.com/ViljarHN/KaboomGame2.0" target="_blank"><h4>Github</h4></a>
+                </div>
+                <div class="project-content">
+                    <h3>IT2 Discord Bot</h3>
+                    <p></p>
+                    <a href="https://github.com/ViljarHN/VHN_BOT" target="_blank"><h4>Github</h4></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="/Framside/image/facebook.png" alt="facebook-logo">
+                </a>
+                <a href="https://github.com/" target="_blank">
+                    <img src="/Framside/image/github.png" alt="github-logo">
+                </a>
+                <a href="mailto:vilnesto.hole@gmail.com?Subject=Hello%20Viljar">
+                    <img src="/Framside/image/mail.png" alt="mail-logo">
+                </a>
+                <a href="https://youtube.com/" target="_blank">
+                    <img src="/Framside/image/youtube.png" alt="youtube-logo">
+                </a>
+            </div>
+        </footer>
+        <!--
+        <nav class="v-navbar">
             <header>Oppgaver</header>
             <ul id="sidebar_elements">
                 <li><a href="/HTMLeksempel/HTMLElements.html" target="iframe_main">HTML eksempel</a></li>
@@ -23,17 +125,7 @@
             <div id="show_menu">
                 <img src="/Framside/image/menu_icon.png" alt="menu_logo">
             </div>
-        </div>
-        <div class="head">
-            <ul>
-                <li><a href="/Framside/html/StartIndex.html" target="iframe_main">Startside</a></li>
-                <li><a href="https://www.w3schools.com/" target="_blank">w3schools</a></li>
-                <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a></li>
-                <li><a href="/KaboomTest2.0/index.html" target="iframe_main">Adventure</a></li>
-                <li><a onclick="show_help();">Hjelp</a></li>
-                <li style="float:right"><a href="/Framside/html/ommegIndex.html" target="iframe_main">Om meg</a></li>
-            </ul>
-        </div>
+        </nav>
         <div class="main">
             <iframe src="/Framside/html/StartIndex.html" style="width: 100%; height: 100%; border: none; margin: 0;" name="iframe_main"></iframe>
         </div>
@@ -53,6 +145,7 @@
                 <p>IT1 oppgåver finner du i menyen til venstre</p>
             </div>
         </div>
+        -->
         <script src="/Framside/javascript/main.js" async defer></script>
     </body>
 </html>
