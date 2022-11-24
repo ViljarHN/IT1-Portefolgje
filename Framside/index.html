@@ -12,17 +12,18 @@
         <header>
             <nav class="h-navbar">
                 <ul>
-                    <li><a href="#home-section">Hjem</a></li>
-                    <li><a href="#about-section">Om</a></li>
-                    <li><a href="#oppgave-section">Oppgaver</a></li>
-                    <li><a href="#project-section">Prosjekter</a></li>
+                    <li><a id="home" onmouseup="add_class(this.id);">Hjem</a></li>
+                    <li><a id="about" onmouseup="add_class(this.id);">Om</a></li>
+                    <li><a id="oppgave" onmouseup="add_class(this.id);">Oppgaver</a></li>
+                    <li><a id="project" onmouseup="add_class(this.id);">Prosjekter</a></li>
                     <li><a href="https://www.w3schools.com/" target="_blank">W3schools</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a></li>
                     <li><a onclick="show_help();">Hjelp</a></li>
+                    <li><a id="contact" style="float: right;" onmouseup="add_class(this.id);">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
-        <section class="home-section" id="home-section">
+        <section class="home-section active" id="home-section">
             <img src="/Framside/image/IMG_0556.JPG" alt="homescreen">
             <p>VHN Portfolio</p>
         </section>
@@ -71,7 +72,7 @@
                     <a href="/Oppgaver/Pixelart/index.html" target="oppgave-iframe"><p>Pixelart</p></a>
                 </div>
             </div>
-            <iframe name="oppgave-iframe" src="/Oppgaver/2D/Oppgave1/tabell.html" onload="resizeIframe(this)"></iframe>
+            <iframe name="oppgave-iframe" src="/Oppgaver/2D/Oppgave1/tabell.html"></iframe>
         </section>
         <section class="project-section" id="project-section">
             <h1 class="text-center">Andre prosjekter</h1>
@@ -93,8 +94,9 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <div class="footer-container">
+        <section class="contact-section" id="contact-section">
+            <h1 class="text-center">Kontakt</h1>
+            <div class="contact-container">
                 <a href="https://www.facebook.com/" target="_blank">
                     <img src="/Framside/image/facebook.png" alt="facebook-logo">
                 </a>
@@ -108,7 +110,7 @@
                     <img src="/Framside/image/youtube.png" alt="youtube-logo">
                 </a>
             </div>
-        </footer>
+        </section>
 
 
 

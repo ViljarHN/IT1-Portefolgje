@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -13,10 +9,6 @@ html {
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: white;
-}
-
-section {
-    border: 1px solid;
 }
 
 .h-navbar {
@@ -41,10 +33,27 @@ section {
     cursor: pointer;
 }
 
+section {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.active {
+    z-index: 9;
+    opacity: 1;
+    transition: all 3s ease;
+}
+
 .home-section {
-    position: relative;
     text-align: center;
     height: 100vh;
+    width: 100%;
 }
 .home-section img {
     width: 100%;
@@ -67,7 +76,6 @@ section {
 
 .about-section {
     padding: 80px 30px;
-    padding-bottom: 0;
 }
 .about-container {
     display: flex;
@@ -122,13 +130,13 @@ section {
     font-size: x-large;
 }
 .oppgave-section iframe {
+    box-sizing: border-box;
     border: 10px double;
     width: 100%;
-    height: 100%;
 }
 
 .project-section {
-    margin-bottom: 80px;
+    padding: 80px 0;
 }
 .project-container {
     padding: 0 60px;
@@ -162,20 +170,22 @@ section {
     font-size: 20px;
 }
 
-.footer-container {
-    background-color: darkgrey;
+.contact-section {
+    padding: 80px 50px;
+}
+.contact-container {
     display: flex;
     justify-content: center;
 }
-.footer-container a {
+.contact-container a {
     margin: 10px;
     opacity: 0.5;
     transition: 500ms;
 }
-.footer-container a:hover {
+.contact-container a:hover {
     opacity: 1;
 }
-.footer-container img{
+.contact-container img{
     width: 50px;
 }
 
