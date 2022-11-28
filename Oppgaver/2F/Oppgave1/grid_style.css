@@ -1,6 +1,9 @@
 body {
     padding: 40px;
 }
+h1 {
+    text-align: center;
+}
 p {
     word-wrap: break-word;
     width: 250px;
