@@ -16,7 +16,7 @@ function resizeIframe(obj) {
 
 const navLink = document.querySelectorAll('.h-navbar li a');
 const section = document.querySelectorAll('section');
-let sectionArray = [];
+//let sectionArray = [];
 
 window.onscroll = () => {
     let current = "";
@@ -36,19 +36,18 @@ window.onscroll = () => {
 const showSkill = (id) => {
     let progressValue = 0;
     let skillValue = 0;
-    let skillName = '';
     const element = document.getElementById(id);
     const element_value = document.getElementById(id+'-skill');
     element.style.scale = '1.2';
     switch (id) {
         case 'html-progress':
-            skillValue = 80;
+            skillValue = 75;
             break;
         case 'css-progress':
-            skillValue = 70;
+            skillValue = 60;
             break;
         case 'js-progress':
-            skillValue = 90;
+            skillValue = 80;
             break;
     }
     let progress = setInterval(() => {
@@ -59,6 +58,7 @@ const showSkill = (id) => {
             clearInterval(progress);
         }
     });
+    /*
     setTimeout(() => {
         switch (id) {
             case 'html-progress':
@@ -75,7 +75,28 @@ const showSkill = (id) => {
         element_value.innerHTML = skillName;
         element.style.background = 'yellow'
     }, 3000)
-}
+    */
+};
+
+const hideSkill = (id) => {
+    let skillName = '';
+    const element = document.getElementById(id);
+    const element_value = document.getElementById(id+'-skill');
+    switch (id) {
+        case 'html-progress':
+            skillName = 'HTML';
+            break;
+        case 'css-progress':
+            skillName = 'CSS';
+            break;
+        case 'js-progress':
+            skillName = 'JS';
+            break;
+    }
+    element.style.scale = '1';
+    element_value.innerHTML = skillName;
+    element.style.background = 'yellow'
+};
 
 /*
 window.onload = () => {

@@ -155,11 +155,6 @@ section {
     text-align: center;
     font-size: x-large;
 }
-.oppgave-section iframe {
-    box-sizing: border-box;
-    border: 10px double;
-    width: 100%;
-}
 
 .project-section {
     padding: 100px 0 0;

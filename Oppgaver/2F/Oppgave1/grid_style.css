@@ -1,3 +1,6 @@
+body {
+    padding: 40px;
+}
 p {
     word-wrap: break-word;
     width: 250px;

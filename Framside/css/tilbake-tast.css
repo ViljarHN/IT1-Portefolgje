@@ -1,0 +1,10 @@
+.tilbake-tast {
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+    height: min-content;
+    width: min-content;
+    background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 10%;
+}
