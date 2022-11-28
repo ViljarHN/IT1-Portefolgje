@@ -58,7 +58,7 @@ const showSkill = (id) => {
             clearInterval(progress);
         }
     });
-    /*
+    
     setTimeout(() => {
         switch (id) {
             case 'html-progress':
@@ -75,9 +75,9 @@ const showSkill = (id) => {
         element_value.innerHTML = skillName;
         element.style.background = 'yellow'
     }, 3000)
-    */
 };
 
+/*
 const hideSkill = (id) => {
     let skillName = '';
     const element = document.getElementById(id);
@@ -97,6 +97,7 @@ const hideSkill = (id) => {
     element_value.innerHTML = skillName;
     element.style.background = 'yellow'
 };
+*/
 
 /*
 window.onload = () => {
