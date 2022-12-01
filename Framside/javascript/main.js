@@ -52,7 +52,7 @@ const showSkill = (id) => {
     }
     let progress = setInterval(() => {
         progressValue++;
-        element_value.innerHTML = `${progressValue}%`
+        element_value.innerHTML = `${progressValue}%`;
         element.style.background = `conic-gradient(red ${progressValue * 3.6}deg, yellow ${progressValue * 3.6}deg)`;
         if (progressValue >= skillValue) {
             clearInterval(progress);
@@ -73,8 +73,8 @@ const showSkill = (id) => {
         }
         element.style.scale = '1';
         element_value.innerHTML = skillName;
-        element.style.background = 'yellow'
-    }, 3000)
+        element.style.background = 'yellow';
+    }, 3000);
 };
 
 /*
