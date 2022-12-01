@@ -188,7 +188,7 @@ section {
 }
 .project-content h4:hover {
     color: red;
-    font-size: 20px;
+    scale: 1.2;
 }
 
 .contact-section {
