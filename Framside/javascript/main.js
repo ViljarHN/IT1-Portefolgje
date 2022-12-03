@@ -18,6 +18,37 @@ const navLink = document.querySelectorAll('.h-navbar li a');
 const section = document.querySelectorAll('section');
 //let sectionArray = [];
 
+const text = ['VHN Portfolio', 'Velkommen til min nettside', 'Naviger deg med topp-menyen', 'Håper du liker den', '']; //array? med fleire utsagn, setter i = ny verdi, dersom i = text length -> i = 0
+let textArrayIndex = 0;
+let allowClick = true;
+
+const typewriter = () => {
+    if (allowClick == true) {
+        let i = 0;
+        const home_text = document.getElementById('home-section-text');
+        allowClick = false;
+        home_text.innerHTML = '';
+        home_text.style.cursor = 'default'
+        function writeText() {
+            if(i < text[textArrayIndex].length) {
+                home_text.innerHTML += text[textArrayIndex].charAt(i);
+                i++;
+                setTimeout(writeText, 150)
+            } else {
+                allowClick = true;
+                home_text.style.cursor = 'pointer'
+                if (textArrayIndex < text.length-1) {
+                    textArrayIndex += 1;
+                } else {
+                    textArrayIndex = 0;
+                }   
+            }
+        }
+        writeText();   
+    }
+}
+
+
 window.onscroll = () => {
     let current = "";
     section.forEach(section => {
@@ -33,7 +64,11 @@ window.onscroll = () => {
     });
 }
 
-const showSkill = (id) => {
+let allowShow_HTML_Skill = true;
+let allowShow_CSS_Skill = true;
+let allowShow_JS_Skill = true;
+
+const showSkillFunction = (id) => {
     let progressValue = 0;
     let skillValue = 0;
     const element = document.getElementById(id);
@@ -42,12 +77,15 @@ const showSkill = (id) => {
     switch (id) {
         case 'html-progress':
             skillValue = 75;
+            allowShow_HTML_Skill = false;
             break;
         case 'css-progress':
             skillValue = 60;
+            allowShow_CSS_Skill = false;
             break;
         case 'js-progress':
             skillValue = 80;
+            allowShow_JS_Skill = false;
             break;
     }
     let progress = setInterval(() => {
@@ -63,12 +101,15 @@ const showSkill = (id) => {
         switch (id) {
             case 'html-progress':
                 skillName = 'HTML';
+                allowShow_HTML_Skill = true;
                 break;
             case 'css-progress':
                 skillName = 'CSS';
+                allowShow_CSS_Skill = true;
                 break;
             case 'js-progress':
                 skillName = 'JS';
+                allowShow_JS_Skill = true;
                 break;
         }
         element.style.scale = '1';
@@ -76,6 +117,16 @@ const showSkill = (id) => {
         element.style.background = 'yellow';
     }, 3000);
 };
+
+const showSkill = (id) => {
+    if (id === 'html-progress' && allowShow_HTML_Skill == true) {
+        showSkillFunction(id);
+    } else if (id === 'css-progress' && allowShow_CSS_Skill == true) {
+        showSkillFunction(id);
+    } else if (id == 'js-progress' && allowShow_JS_Skill == true) {
+        showSkillFunction(id);
+    }
+}
 
 /*
 const hideSkill = (id) => {

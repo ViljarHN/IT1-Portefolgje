@@ -75,14 +75,29 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 70px;
     transform: translate(-50%, -50%);
+    border-right: 9px solid black;
+    margin: 0 auto;
+    white-space: nowrap;
     font-size: 70px;
+    cursor: pointer;
+    animation: blinking-cursor 1s step-end infinite;
+}
+
+@keyframes blinking-cursor {
+    from, to { border-color: black }
+    50% { border-color: transparent; }
 }
 
 .text-center {
     text-align: center;
     margin-bottom: 10px;
     font-size: 40px;
+}
+.text-center-project {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .about-section {
