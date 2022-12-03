@@ -139,9 +139,6 @@ section {
     background: yellow;
     transition: all 500ms ease;
 }
-.skillProgressBorder:hover {
-    cursor: pointer;
-}
 .skillCircle {
     position: absolute;
     width: 40px;
@@ -182,8 +179,8 @@ section {
 .project-content {
     margin: 20px;
     padding: 10px;
+    width: 300px;
     border: 5px solid;
-    height: min-content;
 }
 .project-content:hover {
     border-color:red
