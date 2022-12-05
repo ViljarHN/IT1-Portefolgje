@@ -44,22 +44,7 @@ body {
 
 section {
     background-color: white;
-    /*
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    transition: all 2s ease;
-    */
 }
-
-/*
-.active {
-    z-index: 9;
-    opacity: 1;
-    transition: all 3s ease;
-}
-*/
 
 .home-section {
     text-align: center;
