@@ -18,33 +18,41 @@ const navLink = document.querySelectorAll('.h-navbar li a');
 const section = document.querySelectorAll('section');
 //let sectionArray = [];
 
-const text = ['VHN Portfolio', 'Velkommen til min nettside', 'Naviger deg med topp-menyen', 'Håper du liker den', '']; //array? med fleire utsagn, setter i = ny verdi, dersom i = text length -> i = 0
+const home_text = document.getElementById('home-section-text');
+const text = ['VHN Portfolio', 'Velkommen til min nettside', 'Naviger deg med topp-menyen', 'Håper du liker den'];
 let textArrayIndex = 0;
 let allowClick = true;
 
 const typewriter = () => {
     if (allowClick == true) {
         let i = 0;
-        const home_text = document.getElementById('home-section-text');
         allowClick = false;
-        home_text.innerHTML = '';
         home_text.style.cursor = 'default'
-        function writeText() {
-            if(i < text[textArrayIndex].length) {
-                home_text.innerHTML += text[textArrayIndex].charAt(i);
-                i++;
-                setTimeout(writeText, 150)
-            } else {
-                allowClick = true;
-                home_text.style.cursor = 'pointer'
-                if (textArrayIndex < text.length-1) {
-                    textArrayIndex += 1;
+        function loopFunction() {
+            home_text.innerHTML = '';
+            function writeText() {
+                if(i < text[textArrayIndex].length) {
+                    home_text.innerHTML += text[textArrayIndex].charAt(i);
+                    i++;
+                    setTimeout(writeText, 100)
                 } else {
-                    textArrayIndex = 0;
-                }   
+                    if (textArrayIndex < text.length-1) {
+                        textArrayIndex += 1;
+                        i = 0;
+                        setTimeout(loopFunction, 2000)
+                    } else {
+                        textArrayIndex = 0;
+                        setTimeout(() => {
+                            allowClick = true;
+                            home_text.style.cursor = 'pointer'
+                            home_text.innerHTML = '';
+                        }, 2000);
+                    }   
+                }
             }
+            writeText();    
         }
-        writeText();   
+        loopFunction();
     }
 }
 
