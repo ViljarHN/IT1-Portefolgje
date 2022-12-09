@@ -154,6 +154,7 @@ section {
     animation: blinking-oppgave-button 0.5s step-end infinite;
 }
 
+/*
 @keyframes blinking-oppgave-button {
     from, to { background-color: red; }
     20% { background-color: green; }
@@ -161,6 +162,7 @@ section {
     60% { background-color: yellow; }
     80% {background-color: white; }
 }
+*/
 
 .project-section {
     padding: 100px 0 0;
