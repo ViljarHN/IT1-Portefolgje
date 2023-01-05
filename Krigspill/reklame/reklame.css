@@ -1,0 +1,28 @@
+*{
+    text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+img {
+    width: 100%;
+    opacity: 50%;
+    height: 100vh;
+}
+h1 {
+    font-size: 80px;
+}
+h2 {
+    font-size: 40px;
+}
+#link {
+    font-size: 50px;
+}
+div {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
