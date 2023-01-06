@@ -37,13 +37,21 @@ function makeSoldier() {
     }
 }
 
-let lagA = Math.floor(Math.random() * 10) + 1;
-let lagB = Math.floor(Math.random() * 10) + 1;
+const soldierA = document.getElementById('soldierA');
+const soldierB = document.getElementById('soldierB');
+const riderA = document.getElementById('riderA');
+const riderB = document.getElementById('riderB');
+const cannonA = document.getElementById('cannoncrewA');
+const cannonB = document.getElementById('cannoncrewB');
 
-console.log('lagA: ' + lagA, 'lagB: ' + lagB);
+let lagA = Math.floor(Math.random() * 10) + 5;
+let lagB = Math.floor(Math.random() * 10) + 5;
+
+console.log(`Lag A startar med ${lagA} soldatar`)
+console.log(`Lag B startar med ${lagB} soldatar`)
 
 while (lagA > 0 && lagB > 0) {
-    let angrep = 5;
+    let angrep = 3;
     let a_liv = 10;
     let b_liv = 10;
     const A = makeSoldier();
@@ -56,15 +64,16 @@ while (lagA > 0 && lagB > 0) {
             console.log('Lag A angriper med ein ' + A.name);
             if (skadeA > B.defense) {
                 b_liv -= skadeA;
+                angrep--;
                 console.log('Soldat B tok skade, nåværende liv: ' + b_liv + ', skade frå A: ' + skadeA);
                 if (b_liv <= 0) {
                     lagB--;
                     console.log('Lag B mista ein soldat')
                 }
             } else {
+                angrep--;
                 console.log('Soldat B forsvarte seg');
             }
-            angrep--;
             if (angrep <= 0) {
                 console.log('Ingen nytte i kampen, trekk tilbake!')
             }
@@ -72,15 +81,16 @@ while (lagA > 0 && lagB > 0) {
             console.log('Lag B angriper med ein ' + B.name);
             if (skadeB > A.defense) {
                 a_liv -= skadeB;
+                angrep--;
                 console.log('Soldat A tok skade, nåværende liv: ' + a_liv + ', skade frå B: ' + skadeB);
                 if (a_liv <= 0) {
                     lagA--;
                     console.log('Lag A mista ein soldat')
                 }
             } else {
+                angrep--;
                 console.log('Soldat A forsvarte seg');
             }
-            angrep--;
             if (angrep <= 0) {
                 console.log('Ingen nytte i kampen, trekk tilbake!')
             }
