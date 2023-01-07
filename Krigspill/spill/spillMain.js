@@ -37,70 +37,197 @@ function makeSoldier() {
     }
 }
 
-const soldierA = document.getElementById('soldierA');
-const soldierB = document.getElementById('soldierB');
-const riderA = document.getElementById('riderA');
-const riderB = document.getElementById('riderB');
-const cannonA = document.getElementById('cannoncrewA');
-const cannonB = document.getElementById('cannoncrewB');
+function findASoldierWhoAttacked(soldier) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            return 'soldierA'
+        case 'Rytter':
+            return 'riderA'
+        case 'Kanonmann':
+            return 'cannoncrewA'
+    }
+}
+function findBSoldierWhoAttacked(soldier) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            return 'soldierB'
+        case 'Rytter':
+            return 'riderB'
+        case 'Kanonmann':
+            return 'cannoncrewB'
+    }
+}
 
-let lagA = Math.floor(Math.random() * 10) + 5;
-let lagB = Math.floor(Math.random() * 10) + 5;
+function A_MoveToBattleField(soldier, soldierDiv) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            soldierDiv.style.opacity = '1';
+            soldierDiv.style.left = '370px';
+            break;
+        case 'Rytter':
+            soldierDiv.style.opacity = '1'
+            soldierDiv.style.left = '360px';
+            break;
+        case 'Kanonmann':
+            soldierDiv.style.opacity = '1';
+            soldierDiv.style.left = '360px';
+    }
+}
+function B_MoveToBattleField(soldier, soldierDiv) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            soldierDiv.style.opacity = '1';
+            soldierDiv.style.left = '770px';
+            break;
+        case 'Rytter':
+            soldierDiv.style.opacity = '1';
+            soldierDiv.style.left = '585px';
+            break;
+        case 'Kanonmann':
+            soldierDiv.style.opacity = '1';
+            soldierDiv.style.left = '210px';
+            break;
+    }
+}
+function A_LeaveBattleField(soldier, soldierDiv) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '130px';
+            break;
+        case 'Rytter':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '60px';
+            break;
+        case 'Kanonmann':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '80px';
+            break;
+    }
+}
+function B_LeaveBattleField(soldier, soldierDiv) {
+    switch (soldier.name) {
+        case 'Fotsoldat':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '1000px';
+            break;
+        case 'Rytter':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '900px';
+            break;
+        case 'Kanonmann':
+            soldierDiv.style.opacity = '0';
+            soldierDiv.style.left = '500px';
+            break;
+    }
+}
 
-console.log(`Lag A startar med ${lagA} soldatar`)
-console.log(`Lag B startar med ${lagB} soldatar`)
+let allowStart = true;
 
-while (lagA > 0 && lagB > 0) {
-    let angrep = 3;
-    let a_liv = 10;
-    let b_liv = 10;
-    const A = makeSoldier();
-    const B = makeSoldier();
-    const skadeA = A.skill + A.strength - B.defense;
-    const skadeB = B.skill + B.strength - A.defense;
-    while (a_liv > 0 && b_liv > 0 && angrep > 0) {
-        const randNum = Math.random();
-        if (randNum >= 0.5) {
-            console.log('Lag A angriper med ein ' + A.name);
-            if (skadeA > B.defense) {
-                b_liv -= skadeA;
-                angrep--;
-                console.log('Soldat B tok skade, nåværende liv: ' + b_liv + ', skade frå A: ' + skadeA);
-                if (b_liv <= 0) {
-                    lagB--;
-                    console.log('Lag B mista ein soldat')
-                }
+function startBattle() {
+    if (allowStart == true) {
+        allowStart = false;
+        let lagA = Math.floor(Math.random() * 10) + 5;
+        let lagB = Math.floor(Math.random() * 10) + 5;
+        document.getElementById('redTeamAmount').innerHTML = lagA;
+        document.getElementById('blueTeamAmount').innerHTML = lagB;
+        document.getElementById('endResult').innerHTML = '';
+        function newbattle() {
+            if (lagA > 0 && lagB > 0) {  
+                let angrep = 3;
+                let a_liv = 10;
+                let b_liv = 10;
+                const A = makeSoldier();
+                const B = makeSoldier();
+                const aSoldierDiv = document.getElementById(findASoldierWhoAttacked(A));
+                const bSoldierDiv = document.getElementById(findBSoldierWhoAttacked(B));
+                A_MoveToBattleField(A, aSoldierDiv);
+                B_MoveToBattleField(B, bSoldierDiv);
+                const skadeA = A.skill + A.strength - B.defense;
+                const skadeB = B.skill + B.strength - A.defense;
+                while (a_liv > 0 && b_liv > 0 && angrep > 0) {
+                    const randNum = Math.random();
+                    if (randNum >= 0.5) {
+                        console.log('Lag A angriper med ein ' + A.name);
+                        if (skadeA > B.defense) {
+                            b_liv -= skadeA;
+                            angrep--;
+                            console.log('Soldat B tok skade, nåværende liv: ' + b_liv + ', skade frå A: ' + skadeA);
+                            if (b_liv <= 0) {
+                                lagB--;
+                                console.log('Lag B mista ein soldat');
+                                setTimeout(() => {
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                    document.getElementById('blueTeamAmount').innerHTML = lagB;
+                                }, 1000);
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                }, 2000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 3000); 
+                            };
+                        } else {
+                            angrep--;
+                            console.log('Soldat B forsvarte seg');
+                            if (angrep <= 0) {
+                                console.log('Ingen nytte i kampen, trekk tilbake!')
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                }, 1000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 2000); 
+                            }
+                        }
+                    } else {
+                        console.log('Lag B angriper med ein ' + B.name);
+                        if (skadeB > A.defense) {
+                            a_liv -= skadeB;
+                            angrep--;
+                            console.log('Soldat A tok skade, nåværende liv: ' + a_liv + ', skade frå B: ' + skadeB);
+                            if (a_liv <= 0) {
+                                lagA--;
+                                console.log('Lag A mista ein soldat')
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                    document.getElementById('redTeamAmount').innerHTML = lagA;
+                                }, 1000);
+                                setTimeout(() => {
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                }, 2000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 3000);
+                            }
+                        } else {
+                            angrep--;
+                            console.log('Soldat A forsvarte seg');
+                            if (angrep <= 0) {
+                                console.log('Ingen nytte i kampen, trekk tilbake!')
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                }, 1000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 2000);
+                            }
+                        }
+                    }
+                };
             } else {
-                angrep--;
-                console.log('Soldat B forsvarte seg');
-            }
-            if (angrep <= 0) {
-                console.log('Ingen nytte i kampen, trekk tilbake!')
-            }
-        } else {
-            console.log('Lag B angriper med ein ' + B.name);
-            if (skadeB > A.defense) {
-                a_liv -= skadeB;
-                angrep--;
-                console.log('Soldat A tok skade, nåværende liv: ' + a_liv + ', skade frå B: ' + skadeB);
-                if (a_liv <= 0) {
-                    lagA--;
-                    console.log('Lag A mista ein soldat')
-                }
-            } else {
-                angrep--;
-                console.log('Soldat A forsvarte seg');
-            }
-            if (angrep <= 0) {
-                console.log('Ingen nytte i kampen, trekk tilbake!')
+                allowStart = true;
+                if (lagA == 0) {
+                    console.log(`Lag B vant med ${lagB} soldatar`);
+                    document.getElementById('endResult').innerHTML = `Blå vant med ${lagB} soldater!`;
+                } else {
+                    console.log(`Lag A vant med ${lagA} soldatar`);
+                    document.getElementById('endResult').innerHTML = `Raud vant med ${lagA} soldater!`;
+                };
             }
         }
+        newbattle();   
     }
 };
-
-if (lagA == 0) {
-    console.log(`Lag B vant med ${lagB} soldatar`);
-} else {
-    console.log(`Lag A vant med ${lagA} soldatar`);
-};
-

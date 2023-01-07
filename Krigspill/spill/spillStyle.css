@@ -3,22 +3,58 @@ body {
     padding: 0;
     overflow: hidden;
 }
-.army {
-    transition: 1s all;
+.gameHeader {
+    position: absolute;
+    background-color: grey;
+    width: 300px;
+    height: 40px;
+    border: 3px solid;
+    margin: 15px;
+    margin-left: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+.battleButton {
+    background-color: lightgray;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.battleButton:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.endResult {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.army {
+    opacity: 0;
+    transition: 500ms all;
+}
 .soldier {
     width: 150px;
     height: 130px;
     position: absolute;
 }
 #soldierA {
-    top: 10px;
-    left: 370px;
+    top: 230px;
+    left: 130px;
 }
 #soldierB {
-    top: 10px;
-    left: 770px;
+    top: 210px;
+    left: 1000px;
     transform: rotate(180deg);
 }
 
@@ -28,12 +64,12 @@ body {
     position: absolute;
 }
 #riderA {
-    top: 150px;
-    left: 360px;
+    top: 220px;
+    left: 60px;
 }
 #riderB {
-    top: 150px;
-    left: 585px;
+    top: 220px;
+    left: 900px;
     transform: rotate(180deg);
 }
 
@@ -43,11 +79,11 @@ body {
     position: absolute;
 }
 #cannoncrewA {
-    top: 300px;
-    left: 360px;
+    top: 160px;
+    left: 80px;
 }
 #cannoncrewB {
-    top: 300px;
-    left: 210px;
+    top: 150px;
+    left: 500px;
     transform: rotate(180deg);
 }
