@@ -124,7 +124,7 @@ function B_LeaveBattleField(soldier, soldierDiv) {
 
 let allowStart = true;
 
-function startBattle() {
+function startBattle() { 
     if (allowStart == true) {
         allowStart = false;
         let lagA = Math.floor(Math.random() * 10) + 5;
@@ -167,6 +167,16 @@ function startBattle() {
                                     newbattle(); 
                                 }, 3000); 
                             };
+                            if (angrep <= 0) {
+                                console.log('Ingen nytte i kampen, trekk tilbake!')
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                }, 1000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 2000); 
+                            }
                         } else {
                             angrep--;
                             console.log('Soldat B forsvarte seg');
@@ -201,6 +211,16 @@ function startBattle() {
                                     newbattle(); 
                                 }, 3000);
                             }
+                            if (angrep <= 0) {
+                                console.log('Ingen nytte i kampen, trekk tilbake!')
+                                setTimeout(() => {
+                                    A_LeaveBattleField(A, aSoldierDiv)
+                                    B_LeaveBattleField(B, bSoldierDiv)
+                                }, 1000);
+                                setTimeout(function() {
+                                    newbattle(); 
+                                }, 2000); 
+                            }z
                         } else {
                             angrep--;
                             console.log('Soldat A forsvarte seg');
